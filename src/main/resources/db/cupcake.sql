@@ -2,7 +2,6 @@
 -- PostgreSQL database dump
 --
 
-\restrict SPngs6gxHh3haGNRwZrQzMBXBxGJMJSi7QTt78lhKNbDn2SWj1HnvcchQhQKKnf
 
 -- Dumped from database version 16.2 (Debian 16.2-1.pgdg120+2)
 -- Dumped by pg_dump version 16.11
@@ -20,20 +19,14 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
-DROP DATABASE "Cupcake";
 --
 -- TOC entry 3413 (class 1262 OID 57344)
 -- Name: Cupcake; Type: DATABASE; Schema: -; Owner: postgres
 --
 
-CREATE DATABASE "Cupcake" WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = libc LOCALE = 'en_US.utf8';
 
 
-ALTER DATABASE "Cupcake" OWNER TO postgres;
 
-\unrestrict SPngs6gxHh3haGNRwZrQzMBXBxGJMJSi7QTt78lhKNbDn2SWj1HnvcchQhQKKnf
-\connect "Cupcake"
-\restrict SPngs6gxHh3haGNRwZrQzMBXBxGJMJSi7QTt78lhKNbDn2SWj1HnvcchQhQKKnf
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -51,10 +44,8 @@ SET row_security = off;
 -- Name: public; Type: SCHEMA; Schema: -; Owner: pg_database_owner
 --
 
-CREATE SCHEMA public;
 
 
-ALTER SCHEMA public OWNER TO pg_database_owner;
 
 --
 -- TOC entry 3414 (class 0 OID 0)
@@ -75,9 +66,9 @@ SET default_table_access_method = heap;
 --
 
 CREATE TABLE public.admin (
-    admin_id integer NOT NULL,
-    username character varying NOT NULL,
-    password character varying NOT NULL
+                              admin_id integer NOT NULL,
+                              username character varying NOT NULL,
+                              password character varying NOT NULL
 );
 
 
@@ -114,9 +105,9 @@ ALTER SEQUENCE public.admin_admin_id_seq OWNED BY public.admin.admin_id;
 --
 
 CREATE TABLE public.topping (
-    topping_id integer NOT NULL,
-    name character varying NOT NULL,
-    price integer NOT NULL
+                                topping_id integer NOT NULL,
+                                name character varying NOT NULL,
+                                price integer NOT NULL
 );
 
 
@@ -153,9 +144,9 @@ ALTER SEQUENCE public.topping_topping_id_seq OWNED BY public.topping.topping_id;
 --
 
 CREATE TABLE public.bottom (
-    bottom_id integer DEFAULT nextval('public.topping_topping_id_seq'::regclass) NOT NULL,
-    name character varying NOT NULL,
-    price integer NOT NULL
+                               bottom_id integer DEFAULT nextval('public.topping_topping_id_seq'::regclass) NOT NULL,
+                               name character varying NOT NULL,
+                               price integer NOT NULL
 );
 
 
@@ -192,10 +183,10 @@ ALTER SEQUENCE public.bottom_bottom_id_seq OWNED BY public.bottom.bottom_id;
 --
 
 CREATE TABLE public.customer (
-    customer_id integer NOT NULL,
-    username character varying NOT NULL,
-    balance integer DEFAULT 10000 NOT NULL,
-    password character varying NOT NULL
+                                 customer_id integer NOT NULL,
+                                 username character varying NOT NULL,
+                                 balance integer DEFAULT 10000 NOT NULL,
+                                 password character varying NOT NULL
 );
 
 
@@ -232,11 +223,11 @@ ALTER SEQUENCE public.customer_customer_id_seq OWNED BY public.customer.customer
 --
 
 CREATE TABLE public.order_line (
-    orderline_id integer NOT NULL,
-    quantity integer NOT NULL,
-    order_id integer NOT NULL,
-    bottom_id integer NOT NULL,
-    topping_id integer NOT NULL
+                                   orderline_id integer NOT NULL,
+                                   quantity integer NOT NULL,
+                                   order_id integer NOT NULL,
+                                   bottom_id integer NOT NULL,
+                                   topping_id integer NOT NULL
 );
 
 
@@ -273,8 +264,8 @@ ALTER SEQUENCE public.order_line_orderline_id_seq OWNED BY public.order_line.ord
 --
 
 CREATE TABLE public.orders (
-    order_id integer NOT NULL,
-    customer_id integer NOT NULL
+                               order_id integer NOT NULL,
+                               customer_id integer NOT NULL
 );
 
 
@@ -583,5 +574,4 @@ ALTER TABLE ONLY public.order_line
 -- PostgreSQL database dump complete
 --
 
-\unrestrict SPngs6gxHh3haGNRwZrQzMBXBxGJMJSi7QTt78lhKNbDn2SWj1HnvcchQhQKKnf
 
