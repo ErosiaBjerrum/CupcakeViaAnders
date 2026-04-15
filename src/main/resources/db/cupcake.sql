@@ -2,12 +2,38 @@
 -- PostgreSQL database dump
 --
 
-\restrict ZrHX536gDo3e6xpnMAODQGXeddLmbAXbd6kQPnHpJ2Bl178UZtTjjc3fThOTeJq
+\restrict SPngs6gxHh3haGNRwZrQzMBXBxGJMJSi7QTt78lhKNbDn2SWj1HnvcchQhQKKnf
 
 -- Dumped from database version 16.2 (Debian 16.2-1.pgdg120+2)
 -- Dumped by pg_dump version 16.11
 
--- Started on 2026-04-15 10:23:02 CEST
+-- Started on 2026-04-15 10:33:56 CEST
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+DROP DATABASE "Cupcake";
+--
+-- TOC entry 3413 (class 1262 OID 57344)
+-- Name: Cupcake; Type: DATABASE; Schema: -; Owner: postgres
+--
+
+CREATE DATABASE "Cupcake" WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = libc LOCALE = 'en_US.utf8';
+
+
+ALTER DATABASE "Cupcake" OWNER TO postgres;
+
+\unrestrict SPngs6gxHh3haGNRwZrQzMBXBxGJMJSi7QTt78lhKNbDn2SWj1HnvcchQhQKKnf
+\connect "Cupcake"
+\restrict SPngs6gxHh3haGNRwZrQzMBXBxGJMJSi7QTt78lhKNbDn2SWj1HnvcchQhQKKnf
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -31,7 +57,7 @@ CREATE SCHEMA public;
 ALTER SCHEMA public OWNER TO pg_database_owner;
 
 --
--- TOC entry 3413 (class 0 OID 0)
+-- TOC entry 3414 (class 0 OID 0)
 -- Dependencies: 4
 -- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: pg_database_owner
 --
@@ -74,7 +100,7 @@ CREATE SEQUENCE public.admin_admin_id_seq
 ALTER SEQUENCE public.admin_admin_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3414 (class 0 OID 0)
+-- TOC entry 3415 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: admin_admin_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -113,7 +139,7 @@ CREATE SEQUENCE public.topping_topping_id_seq
 ALTER SEQUENCE public.topping_topping_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3415 (class 0 OID 0)
+-- TOC entry 3416 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: topping_topping_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -152,7 +178,7 @@ CREATE SEQUENCE public.bottom_bottom_id_seq
 ALTER SEQUENCE public.bottom_bottom_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3416 (class 0 OID 0)
+-- TOC entry 3417 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: bottom_bottom_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -192,7 +218,7 @@ CREATE SEQUENCE public.customer_customer_id_seq
 ALTER SEQUENCE public.customer_customer_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3417 (class 0 OID 0)
+-- TOC entry 3418 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: customer_customer_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -233,7 +259,7 @@ CREATE SEQUENCE public.order_line_orderline_id_seq
 ALTER SEQUENCE public.order_line_orderline_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3418 (class 0 OID 0)
+-- TOC entry 3419 (class 0 OID 0)
 -- Dependencies: 222
 -- Name: order_line_orderline_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -271,7 +297,7 @@ CREATE SEQUENCE public.orders_order_id_seq
 ALTER SEQUENCE public.orders_order_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3419 (class 0 OID 0)
+-- TOC entry 3420 (class 0 OID 0)
 -- Dependencies: 224
 -- Name: orders_order_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -325,17 +351,15 @@ ALTER TABLE ONLY public.topping ALTER COLUMN topping_id SET DEFAULT nextval('pub
 -- Data for Name: admin; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.admin (admin_id, username, password) FROM stdin;
-1	Egon	1234
-2	Admin	1234
-3	Admin	1234
-4	Admin	123
-5	Admini	123
-6	Adminus	123
-7	Andy	123
-8	Admin	1234
-9	Admin	1234
-\.
+INSERT INTO public.admin (admin_id, username, password) VALUES (1, 'Egon', '1234');
+INSERT INTO public.admin (admin_id, username, password) VALUES (2, 'Admin', '1234');
+INSERT INTO public.admin (admin_id, username, password) VALUES (3, 'Admin', '1234');
+INSERT INTO public.admin (admin_id, username, password) VALUES (4, 'Admin', '123');
+INSERT INTO public.admin (admin_id, username, password) VALUES (5, 'Admini', '123');
+INSERT INTO public.admin (admin_id, username, password) VALUES (6, 'Adminus', '123');
+INSERT INTO public.admin (admin_id, username, password) VALUES (7, 'Andy', '123');
+INSERT INTO public.admin (admin_id, username, password) VALUES (8, 'Admin', '1234');
+INSERT INTO public.admin (admin_id, username, password) VALUES (9, 'Admin', '1234');
 
 
 --
@@ -344,13 +368,11 @@ COPY public.admin (admin_id, username, password) FROM stdin;
 -- Data for Name: bottom; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.bottom (bottom_id, name, price) FROM stdin;
-1	Chocolate	5
-2	Vanilla	5
-3	Nutmeg	5
-4	Pistacio	6
-5	Almond	7
-\.
+INSERT INTO public.bottom (bottom_id, name, price) VALUES (1, 'Chocolate', 5);
+INSERT INTO public.bottom (bottom_id, name, price) VALUES (2, 'Vanilla', 5);
+INSERT INTO public.bottom (bottom_id, name, price) VALUES (3, 'Nutmeg', 5);
+INSERT INTO public.bottom (bottom_id, name, price) VALUES (4, 'Pistacio', 6);
+INSERT INTO public.bottom (bottom_id, name, price) VALUES (5, 'Almond', 7);
 
 
 --
@@ -359,15 +381,13 @@ COPY public.bottom (bottom_id, name, price) FROM stdin;
 -- Data for Name: customer; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.customer (customer_id, username, balance, password) FROM stdin;
-1	testuser	10000	1234
-3	Anders	10000	123
-4	And	10000	123
-6	Egon	10000	123
-7	Elin	10000	12
-8	Herre	10000	234
-9	Ibrahim	2470	123
-\.
+INSERT INTO public.customer (customer_id, username, balance, password) VALUES (1, 'testuser', 10000, '1234');
+INSERT INTO public.customer (customer_id, username, balance, password) VALUES (3, 'Anders', 10000, '123');
+INSERT INTO public.customer (customer_id, username, balance, password) VALUES (4, 'And', 10000, '123');
+INSERT INTO public.customer (customer_id, username, balance, password) VALUES (6, 'Egon', 10000, '123');
+INSERT INTO public.customer (customer_id, username, balance, password) VALUES (7, 'Elin', 10000, '12');
+INSERT INTO public.customer (customer_id, username, balance, password) VALUES (8, 'Herre', 10000, '234');
+INSERT INTO public.customer (customer_id, username, balance, password) VALUES (9, 'Ibrahim', 2470, '123');
 
 
 --
@@ -376,8 +396,6 @@ COPY public.customer (customer_id, username, balance, password) FROM stdin;
 -- Data for Name: order_line; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.order_line (orderline_id, quantity, order_id, bottom_id, topping_id) FROM stdin;
-\.
 
 
 --
@@ -386,9 +404,7 @@ COPY public.order_line (orderline_id, quantity, order_id, bottom_id, topping_id)
 -- Data for Name: orders; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.orders (order_id, customer_id) FROM stdin;
-1	9
-\.
+INSERT INTO public.orders (order_id, customer_id) VALUES (1, 9);
 
 
 --
@@ -397,21 +413,19 @@ COPY public.orders (order_id, customer_id) FROM stdin;
 -- Data for Name: topping; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.topping (topping_id, name, price) FROM stdin;
-1	Chocolate	5
-2	Blueberry	5
-3	Rasberry	5
-4	Crispy	6
-5	Strawberry	6
-6	Rum/Raisin	7
-7	Orange	8
-8	Lemon	8
-9	Blue cheese	9
-\.
+INSERT INTO public.topping (topping_id, name, price) VALUES (1, 'Chocolate', 5);
+INSERT INTO public.topping (topping_id, name, price) VALUES (2, 'Blueberry', 5);
+INSERT INTO public.topping (topping_id, name, price) VALUES (3, 'Rasberry', 5);
+INSERT INTO public.topping (topping_id, name, price) VALUES (4, 'Crispy', 6);
+INSERT INTO public.topping (topping_id, name, price) VALUES (5, 'Strawberry', 6);
+INSERT INTO public.topping (topping_id, name, price) VALUES (6, 'Rum/Raisin', 7);
+INSERT INTO public.topping (topping_id, name, price) VALUES (7, 'Orange', 8);
+INSERT INTO public.topping (topping_id, name, price) VALUES (8, 'Lemon', 8);
+INSERT INTO public.topping (topping_id, name, price) VALUES (9, 'Blue cheese', 9);
 
 
 --
--- TOC entry 3420 (class 0 OID 0)
+-- TOC entry 3421 (class 0 OID 0)
 -- Dependencies: 216
 -- Name: admin_admin_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -420,7 +434,7 @@ SELECT pg_catalog.setval('public.admin_admin_id_seq', 9, true);
 
 
 --
--- TOC entry 3421 (class 0 OID 0)
+-- TOC entry 3422 (class 0 OID 0)
 -- Dependencies: 218
 -- Name: bottom_bottom_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -429,7 +443,7 @@ SELECT pg_catalog.setval('public.bottom_bottom_id_seq', 6, false);
 
 
 --
--- TOC entry 3422 (class 0 OID 0)
+-- TOC entry 3423 (class 0 OID 0)
 -- Dependencies: 220
 -- Name: customer_customer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -438,7 +452,7 @@ SELECT pg_catalog.setval('public.customer_customer_id_seq', 9, true);
 
 
 --
--- TOC entry 3423 (class 0 OID 0)
+-- TOC entry 3424 (class 0 OID 0)
 -- Dependencies: 222
 -- Name: order_line_orderline_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -447,7 +461,7 @@ SELECT pg_catalog.setval('public.order_line_orderline_id_seq', 2, true);
 
 
 --
--- TOC entry 3424 (class 0 OID 0)
+-- TOC entry 3425 (class 0 OID 0)
 -- Dependencies: 224
 -- Name: orders_order_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -456,7 +470,7 @@ SELECT pg_catalog.setval('public.orders_order_id_seq', 1, true);
 
 
 --
--- TOC entry 3425 (class 0 OID 0)
+-- TOC entry 3426 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: topping_topping_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -563,11 +577,11 @@ ALTER TABLE ONLY public.order_line
     ADD CONSTRAINT weapon_id FOREIGN KEY (bottom_id) REFERENCES public.bottom(bottom_id) NOT VALID;
 
 
--- Completed on 2026-04-15 10:23:03 CEST
+-- Completed on 2026-04-15 10:33:57 CEST
 
 --
 -- PostgreSQL database dump complete
 --
 
-\unrestrict ZrHX536gDo3e6xpnMAODQGXeddLmbAXbd6kQPnHpJ2Bl178UZtTjjc3fThOTeJq
+\unrestrict SPngs6gxHh3haGNRwZrQzMBXBxGJMJSi7QTt78lhKNbDn2SWj1HnvcchQhQKKnf
 
