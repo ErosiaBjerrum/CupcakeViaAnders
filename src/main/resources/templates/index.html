@@ -28,21 +28,21 @@ Olsker Cupcakes
 
 <form method="post" action="/add-to-cart" class="order-line">
 
-    <select id="weapon" name="weapon" required>
-        <option value="" disabled selected>Vælg våben</option>
-        <option th:each="weapon : ${weapons}"
-                th:value="${weapon.id}"
-                th:data-price="${weapon.price}"
-                th:text="${weapon.name + ' (' + weapon.price + ' g)'}">
+    <select id="bottom" name="bottom" required>
+        <option value="" disabled selected>Vælg bund</option>
+        <option th:each="bottom : ${bottoms}"
+                th:value="${bottom.id}"
+                th:data-price="${bottom.price}"
+                th:text="${bottom.name + ' (' + bottom.price + ' g)'}">
         </option>
     </select>
 
-    <select id="material" name="material" required>
-        <option value="" disabled selected>Vælg materiale</option>
-        <option th:each="material : ${materials}"
-                th:value="${material.id}"
-                th:data-price="${material.price}"
-                th:text="${material.name + ' (' + material.price + ' g)'}">
+    <select id="topping" name="topping" required>
+        <option value="" disabled selected>Vælg topping</option>
+        <option th:each="topping : ${toppings}"
+                th:value="${topping.id}"
+                th:data-price="${topping.price}"
+                th:text="${topping.name + ' (' + topping.price + ' g)'}">
         </option>
     </select>
 
