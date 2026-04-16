@@ -19,7 +19,7 @@ public class Main {
 
         app.get("/", ctx -> ctx.render("index"));
 
-
+        app.get("/login", ctx -> ctx.render("/login.html"));
 
     }
 }
