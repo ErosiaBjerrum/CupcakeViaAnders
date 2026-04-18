@@ -1,7 +1,6 @@
 package app;
 
-import app.entities.*;
-import app.persistence.*;
+
 
 import java.util.List;
 
